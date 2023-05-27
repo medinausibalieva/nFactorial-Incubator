@@ -152,3 +152,8 @@ def go():
             quit()
         pygame.display.flip()
 
+def main():
+    if ctypes.windll.user32.MessageBoxW(0, "Go?", "Rock Paper Scissors", 4) == 6:
+        go()
+if __name__ == "__main__":
+    main()
