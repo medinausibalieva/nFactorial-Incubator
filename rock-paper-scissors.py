@@ -5,8 +5,9 @@ import random
 from enum import Enum
 
 pygame.mixer.init()
-pygame.mixer.music.load("music.mp3")
+pygame.mixer.music.load("music/music.mp3")
 pygame.mixer.music.play()
+
 
 class RPSType(Enum):
     Paper = "./img/paper.png"
@@ -76,11 +77,11 @@ class RPSCircle(pygame.sprite.Sprite):
             self.reflect((0, 1))
         if self.rect.bottom >= window_size.bot:
             self.reflect((0, -1))
-#     def die_if_killed(self, other_circles: list):
-#         for circle in other_circles:
-#             if self.pos.distance_to(circle.pos) < self.radius + circle.radius -2:
-#                 new_vector = circle.dir - self.dir
-#                 self.wincheck(circle)    
+    # def die_if_killed(self, other_circles: list):
+    #     for circle in other_circles:
+    #         if self.pos.distance_to(circle.pos) < self.radius + circle.radius -2:
+    #             new_vector = circle.dir - self.dir
+    #             self.wincheck(circle)    
                 
 def find_collisions(sprites: pygame.sprite.Group):
     for a, b in itertools.permutations(sprites, 2):
