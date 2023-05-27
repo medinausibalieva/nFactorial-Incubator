@@ -4,6 +4,10 @@ import ctypes
 import random
 from enum import Enum
 
+pygame.mixer.init()
+pygame.mixer.music.load("music.mp3")
+pygame.mixer.music.play()
+
 class RPSType(Enum):
     Paper = "./img/paper.png"
     Scissors = "./img/scissor.png"
